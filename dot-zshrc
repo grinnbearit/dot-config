@@ -1,0 +1,23 @@
+# Author - Sidhant Godiwala <sidhant.godiwala@gmail.com>
+
+# Load the prompt
+autoload -U promptinit
+promptinit
+
+# Prompt settings
+PS1=$'%n@%m:%~%(!.#.$ )'
+
+# Environment variables
+PATH=$PATH:~/bin
+WORKON_HOME=~/.virtualenv
+
+#virtualenvwrapper
+source virtualenvwrapper.sh
+
+# Enable color support of ls
+if [[ "$TERM" != "dumb" ]]; then
+    if [[ -x `which dircolors` ]]; then
+	eval `dircolors -b`
+	alias 'ls=ls --color=auto'
+    fi
+fi
