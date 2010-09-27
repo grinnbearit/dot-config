@@ -1,2 +1,1 @@
 zsh: dot-zshrc => ~/.zshrc 
-awesome: awesomerc.lua => ~/.config/awesome/rc.lua
