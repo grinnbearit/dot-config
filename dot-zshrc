@@ -9,12 +9,6 @@ PS1=$'%n@%m:%~%(!.#.$ )'
 
 # Environment variables
 PATH=$PATH:~/bin
-# Uncomment for virtualenv
-# WORKON_HOME=~/.virtualenv
-
-# Uncomment for virtualenvwrapper
-#virtualenvwrapper
-# source virtualenvwrapper.sh
 
 # Enable color support of ls
 if [[ "$TERM" != "dumb" ]]; then
