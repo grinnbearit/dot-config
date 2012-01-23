@@ -1,7 +1,8 @@
 # Author - Sidhant Godiwala <sidhant.godiwala@gmail.com>
 
-# Load the prompt
-autoload -U promptinit
+# https://wiki.archlinux.org/index.php/Zsh
+autoload -U compinit promptinit
+compinit
 promptinit
 
 # Prompt settings
