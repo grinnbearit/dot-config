@@ -31,6 +31,8 @@ ZSH_THEME="tjkirch"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 
+
+setopt extended_glob
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
