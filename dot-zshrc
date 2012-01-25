@@ -31,8 +31,12 @@ ZSH_THEME="tjkirch"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 
-
-setopt extended_glob
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+
+# initialize globbing http://linuxshellaccount.blogspot.com/2008/07/fancy-globbing-with-zsh-on-linux-and.html
+setopt extended_glob
+
+# load local environment variables
+source ~/.profile
