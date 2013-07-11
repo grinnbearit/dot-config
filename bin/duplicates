@@ -1,4 +1,8 @@
 #!/usr/bin/env python
+# takes the same arguments as find
+#
+# groups all files with the same md5 hash value
+
 import re
 import sys
 import subprocess
