@@ -1,0 +1,26 @@
+#!/usr/bin/env python
+import re
+import sys
+import subprocess
+import collections
+
+md5_regex = re.compile('MD5 \((.*)\) = (.*).*$')
+
+def main(args):
+    command = "find " + "".join(args) + " -type f -exec md5 {} \;"
+    pipe = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
+    grouped = collections.defaultdict(list)
+
+    for filename, hash in [re.match(md5_regex, line).groups() for line in pipe.stdout.readlines()]:
+        grouped[hash].append(filename)
+
+    for hash, files in grouped.items():
+        if len(files) > 1:
+            print "-- {0} --".format(hash)
+            for filename in files:
+                print filename
+            print "-- total {0} --".format(len(files))
+
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
