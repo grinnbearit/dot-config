@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+# takes any number of pdf files followed by an output file
+#
+# combines them into a single pdf
+
+# http://stackoverflow.com/questions/3444645/merge-pdf-files
+
+import sys
+from pyPdf import PdfFileWriter, PdfFileReader
+
+
+if __name__ == "__main__":
+    f_ins = sys.argv[1:-1]
+    f_out = sys.argv[-1]
+    pdf_out = PdfFileWriter()
+
+    for f_in in f_ins:
+        pdf_in = PdfFileReader(open(f_in, "rb"))
+        for idx in range(pdf_in.numPages):
+            pdf_out.addPage(pdf_in.getPage(idx))
+
+    pdf_out.write(open(f_out, "wb"))
