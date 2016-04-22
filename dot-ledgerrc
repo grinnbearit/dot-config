@@ -1,3 +1,7 @@
 --file ~/Documents/accounts/ledger.dat
 --input-date-format "%Y/%m/%d"
 --strict
+--download
+--getquote ~/Documents/accounts/fetch_prices.py
+--price-db ~/Documents/accounts/prices.dat
+-Z 1440
